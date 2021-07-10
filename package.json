@@ -2,18 +2,29 @@
   "name": "random-tables",
   "version": "0.1.0",
   "description": "Tool for compiling and using weighted random tables",
-  "main": "index.js",
+  "keywords": ["random", "tables"],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
     "format": "prettier --write 'src/**/(*.ts|.js)'",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
-  "files": [
-    "lib/**/*"
-  ],
   "author": "Viktor Ricci <ricci@primateer.de>",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaxr/random-tables.git"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.24",
     "jest": "^27.0.6",
