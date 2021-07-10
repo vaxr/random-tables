@@ -9,6 +9,7 @@
     "format": "prettier --write 'src/**/(*.ts|.js)'",
     "lint": "tslint -p tsconfig.json"
   },
+  "files": ["lib/**/*"],
   "author": "Viktor Ricci <ricci@primateer.de>",
   "license": "ISC",
   "devDependencies": {
