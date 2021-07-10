@@ -1,0 +1,15 @@
+{
+  "name": "random-tables",
+  "version": "0.1.0",
+  "description": "Tool for compiling and using weighted random tables",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "author": "Viktor Ricci <ricci@primateer.de>",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
