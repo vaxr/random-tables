@@ -33,12 +33,14 @@ class Table {
     rows: Row[] = []
 
     getEntryForRoll(roll: number): any {
+        if (roll < 0 || roll >= 1) {
+            throw new TypeError(`Roll must be in [0, 1), was: ${roll}`)
+        }
         for (const row of this.rows) {
             roll -= row.weight
             if (roll < 0) {
                 return row.entry
             }
         }
-        // TODO throw exception
     }
 }
